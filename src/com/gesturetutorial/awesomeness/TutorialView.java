@@ -14,13 +14,23 @@ import android.widget.LinearLayout;
 
 public class TutorialView extends WebView {
 
-    public static int LeftToRight = 0;
-    public static int RightToLeft = 1;
-    public static int Pinch = 2;
-    public static int UpToDown = 3;
-    public static int DownToUp = 4;
-    public static int SingleFingerTap = 5;
-    public static int DoubleFingerTap = 6;
+    final public static int LeftToRight = 0;
+    final public static int RightToLeft = 1;
+    final public static int Pinch = 2;
+    final public static int UpToDown = 3;
+    final public static int DownToUp = 4;
+    final public static int SingleFingerTap = 5;
+    final public static int DoubleFingerTap = 6;
+
+    final public static int UpperLeft = 0;
+    final public static int UpperCenter = 1;
+    final public static int UpperRight = 2;
+    final public static int CenterLeft = 3;
+    final public static int Center = 4;
+    final public static int CenterRight = 5;
+    final public static int LowerLeft = 6;
+    final public static int LowerCenter = 7;
+    final public static int LowerRight = 8;
 
     private static final String TAG = "TutorialView";
 
@@ -43,7 +53,7 @@ public class TutorialView extends WebView {
         rlp.height = 400;
         rlp.width = 550;
         // 550 X 400
-        rlp.gravity = Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL;
+        rlp.gravity = locationToGravity(location);
         // rlp.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM, v.getId());
         // rlp.addRule(RelativeLayout.ALIGN_PARENT_RIGHT, v.getId());
         tv.setLayoutParams(rlp);
@@ -68,6 +78,33 @@ public class TutorialView extends WebView {
         tv.loadUrl(url);
 
         return tv;
+    }
+
+    private static int locationToGravity(final int location)
+    {
+        switch (location)
+        {
+            case TutorialView.UpperLeft:
+                return Gravity.TOP | Gravity.LEFT;
+            case TutorialView.UpperCenter:
+                return Gravity.TOP | Gravity.CENTER_HORIZONTAL;
+            case TutorialView.UpperRight:
+                return Gravity.TOP | Gravity.RIGHT;
+            case TutorialView.CenterLeft:
+                return Gravity.CENTER_VERTICAL | Gravity.LEFT;
+            case TutorialView.Center:
+                return Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL;
+            case TutorialView.CenterRight:
+                return Gravity.CENTER_VERTICAL | Gravity.RIGHT;
+            case TutorialView.LowerLeft:
+                return Gravity.BOTTOM | Gravity.LEFT;
+            case TutorialView.LowerCenter:
+                return Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL;
+            case TutorialView.LowerRight:
+                return Gravity.BOTTOM | Gravity.RIGHT;
+            default:
+                return TutorialView.locationToGravity(TutorialView.Center);
+        }
     }
 
     private static String swipeToAsset(final int swipe) {
