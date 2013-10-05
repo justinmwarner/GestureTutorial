@@ -5,7 +5,7 @@ GestureTutorial is an Android library created for Android API number 8 and highe
 
 It's easy to implement in XML or code.
 
-![Example Image][3]
+![Example Image][1]
 
 XML
 ----
@@ -77,5 +77,5 @@ License
     limitations under the License.
 
 
- [3]: https://raw.github.com/justinmwarner/GestureTutorial/master/assets/LeftToRight.gif
+ [1]: https://raw.github.com/justinmwarner/GestureTutorial/master/assets/LeftToRight.gif
     
