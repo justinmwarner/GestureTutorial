@@ -50,10 +50,11 @@ To be made.
 
 Installation
 --------------
-Download the .zip, in Eclipse, right click, import existing code, select unziped content.
+1. Download the .zip, in Eclipse, right click, import existing code, select unziped content.
 
-Right click project to use with, properties, Android, Add..., Select GestureTutorial
+2. Right click project to use with, properties, Android, Add..., Select GestureTutorial
 
+3. Because of limitations in Android libraries, this isn't all you'd have to do like normal.  The gif files are in the assets folder of GestureTutorial and must be moved to your own projects assets folder.  This is currently the only way it's supported.
 
 Bugs
 ----
