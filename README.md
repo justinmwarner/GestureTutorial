@@ -5,6 +5,8 @@ GestureTutorial is an Android library created for Android API number 8 and highe
 
 It's easy to implement in XML or code.
 
+The sample project is available here: https://play.google.com/store/apps/details?id=com.gesturetutorialsample.awesomeness
+
 ![Example Image][1]
 
 XML
@@ -46,7 +48,7 @@ or
 Sample Project
 -----------
 
-To be made.
+Sample project is now in the project in the sample directory.
 
 Installation
 --------------
